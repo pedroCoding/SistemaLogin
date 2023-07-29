@@ -21,7 +21,6 @@ const LoginPage = () => {
     return (
         <div id="login">
             <h1 className="title">Login do Sistema</h1>
-            <p>{String(authenticated)}</p>
             <form className="form" onSubmit={handleSubmit}>
                 <div className="field">
                     <label htmlFor="email">Email</label>

@@ -2,6 +2,7 @@ import React, { useState, useEffect, createContext } from "react";
 
 import { useNavigate } from "react-router-dom";
 
+
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
@@ -34,6 +35,8 @@ export const AuthProvider = ({children}) => {
         if(password === "pedro"){
             setUser({ loggedUser });
             navigate("/");
+        }else{
+            
         }
 
         setUser({ id: "123", email });
@@ -41,7 +44,8 @@ export const AuthProvider = ({children}) => {
 
 
     const logout = () => {
-        console.log('logout')
+        console.log("logout");
+        localStorage.removeItem("user");
         setUser(null);
         navigate("/login");
     };
@@ -50,7 +54,7 @@ export const AuthProvider = ({children}) => {
 
     return (
         <AuthContext.Provider value={{authenticated:
-            !!user,user, loading, login }}>
+            !!user,user, loading, login, logout }}>
                 {children}
         </AuthContext.Provider>
     )
