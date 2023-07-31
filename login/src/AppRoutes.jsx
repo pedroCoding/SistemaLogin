@@ -9,6 +9,7 @@ import{
 
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
+import Maps from "./pages/Maps/iguatu";
 
 import { AuthProvider, AuthContext } from "./contexts/auth";
 
@@ -32,8 +33,8 @@ const AppRoutes = () => {
             <AuthProvider>
                 <Routes>
                     <Route exact path="/login" element={<LoginPage/>} />
+                    <Route exact path="/maps" element={<Maps/>} />
                     <Route exact path="/" element={<Private><HomePage/></Private>} />
-                    <Route exact path="/admin" element={<Private><HomePage/></Private>} />
                 </Routes>
             </AuthProvider>
         </Router>
